@@ -1,10 +1,10 @@
-import Home from "./components/home.component";
+import Header from "./components/header.component";
 
 const App = () => {
   return (
-    <>
-      <Home/>
-    </>
+    
+      <Header/>
+    
   );
 };
 

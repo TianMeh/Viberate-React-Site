@@ -3,7 +3,7 @@ const Header = () => {
     return(
         <header className="header">
         {/* <!-- page --> */}
-        <div class="page">
+        <div className="page">
           <a href="#" className="logo">
             <img src="./exercise-01_files/logo-v.svg" alt="Viberate" /> Viberate
           </a>
@@ -11,10 +11,10 @@ const Header = () => {
           <nav className="navigation-primary">
             <ul className="menu-sys">
               <li>
-                <button className="btn btn-menu search">Search</button>
+                <button style={{ color: "white"}} class="btn  search">Search</button>
               </li>
               <li>
-                <button className="btn btn-menu more">More</button>
+                <button className="btn more">More</button>
               </li>
             </ul>
 
