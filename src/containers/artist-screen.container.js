@@ -1,11 +1,10 @@
 import React from "react";
 
-import Subgenres from "../components/subgenres.component";
+import SubgenresVote from "../components/subgenres-vote.component";
+import SubgenresNames from "../components/subgenres-names.component";
 
 const ArtistScreen = ({ artistData }) => {
   const { data } = artistData;
-
-//   console.log(data.subgenres[0].name);
 
   return (
     // <!-- MAIN -->
@@ -49,7 +48,7 @@ const ArtistScreen = ({ artistData }) => {
                             on top!
                           </p>
                           <div class="stats-sheet">
-                            <Subgenres data={data}/>
+                            <SubgenresVote data={data} />
                           </div>
                           <p>
                             <button class="btn btn-shadow">Vote now</button>
@@ -70,19 +69,17 @@ const ArtistScreen = ({ artistData }) => {
 
                   <div class="row">
                     <label>Origin</label>
-                    <a class="btn btn-filter-tag">Slovenia</a>
+                    <a class="btn btn-filter-tag">{data.country.name}</a>
                   </div>
 
                   <div class="row">
                     <label>Genre</label>
-                    <span class="btn btn-filter-tag">Rock</span>
+                    <span class="btn btn-filter-tag">{data.genre.name}</span>
                   </div>
 
                   <div class="row">
                     <label>Subgenres</label>
-                    <span class="btn btn-filter-tag">Alternative rock</span>
-                    <span class="btn btn-filter-tag">Alternative metal</span>
-                    <span class="btn btn-filter-tag">Progressive rock</span>
+                    <SubgenresNames data={data}/>
                     <div class="tooltip-wrapper">
                       <button class="btn btn-add">Add subgenre</button>
                       <div class="tooltip">
@@ -92,30 +89,7 @@ const ArtistScreen = ({ artistData }) => {
                           are missing or vote for existing to get yours on top!
                         </p>
                         <div class="stats-sheet">
-                          <div class="row">
-                            <h5>Alternative rock</h5>
-                            <div class="graph-line">
-                              <span class="line" style={{ width: "47%" }}>
-                                47%
-                              </span>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <h5>Alternative metal</h5>
-                            <div class="graph-line">
-                              <span class="line" style={{ width: "23%" }}>
-                                23%
-                              </span>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <h5>Progressive rock</h5>
-                            <div class="graph-line">
-                              <span class="line" style={{ width: "15%" }}>
-                                15%
-                              </span>
-                            </div>
-                          </div>
+                        <SubgenresVote data={data} />
                         </div>
                         <p>
                           <button class="btn btn-shadow">Vote now</button>
