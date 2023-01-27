@@ -1,6 +1,9 @@
+import React from "react"
+import { Outlet } from "react-router-dom"
 
-const Header = () => {
+const Navigation = () => {
     return(
+      <>
         <header className="header">
         {/* <!-- page --> */}
         <div className="page">
@@ -33,8 +36,10 @@ const Header = () => {
         </div>
         {/* <!-- /page --> */}
       </header>
-    //   <!-- /HEADER -->
+       {/* <!-- /HEADER --> */}
+       <Outlet/>
+    </>
     )
 }
 
-export default Header
+export default Navigation
