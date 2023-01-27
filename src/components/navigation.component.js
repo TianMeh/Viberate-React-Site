@@ -1,10 +1,14 @@
-import React from "react"
-import { Outlet } from "react-router-dom"
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
 
-const Navigation = () => {
-    return(
-      <>
-        <header className="header">
+const Navigation = ({ artists }) => {
+  const umek = artists.all_artists[0].artist_name
+  const arianaGrande = artists.all_artists[1].artist_name
+  const blackpink = artists.all_artists[2].artist_name
+
+  return (
+    <>
+      <header className="header">
         {/* <!-- page --> */}
         <div className="page">
           <a href="#" className="logo">
@@ -14,32 +18,35 @@ const Navigation = () => {
           <nav className="navigation-primary">
             <ul className="menu-sys">
               <li>
-                <button style={{ color: "white"}} class="btn  search">Search</button>
+                <button style={{ color: "white" }} class="btn  search">
+                  Search
+                </button>
               </li>
               <li>
                 <button className="btn more">More</button>
               </li>
             </ul>
-
             <ul className="menu">
               <li>
-                <a href="">Artist 1</a>
+                <Link to="/">
+                  {umek}
+                </Link>
               </li>
               <li>
-                <a href="">Artist 2</a>
+                <a href="">{arianaGrande}</a>
               </li>
               <li>
-                <a href="">Artist 3</a>
+                <a href="">{blackpink}</a>
               </li>
             </ul>
           </nav>
         </div>
         {/* <!-- /page --> */}
       </header>
-       {/* <!-- /HEADER --> */}
-       <Outlet/>
+      {/* <!-- /HEADER --> */}
+      <Outlet />
     </>
-    )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
