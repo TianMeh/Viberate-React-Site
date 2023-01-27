@@ -2,6 +2,7 @@ import React from "react";
 
 import SubgenresVote from "../components/subgenres-vote.component";
 import SubgenresNames from "../components/subgenres-names.component";
+import SocialList from "../components/social-list.component";
 
 const ArtistScreen = ({ artistData }) => {
   const { data } = artistData;
@@ -101,136 +102,7 @@ const ArtistScreen = ({ artistData }) => {
 
                 <div class="footer-detail">
                   <ul class="social-list">
-                    <li>
-                      <a href="#" class="btn social-icon facebook">
-                        Facebook
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon twitter">
-                        Twitter
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon instagram">
-                        Instagram
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon spotify">
-                        Spotify
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon songkick">
-                        Songkick
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon soundcloud">
-                        soundcloud
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon youtube">
-                        youtube
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon beatport">
-                        beatport
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon mixcloud">
-                        mixcloud
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon gigatools">
-                        gigatools
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon eventbrite">
-                        eventbrite
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon skiddle">
-                        skiddle
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon ticketmaster">
-                        ticketmaster
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon tumblr">
-                        tumblr
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon google_plus">
-                        google_plus
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon google_play_music">
-                        google_play_music
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon bandsintown">
-                        bandsintown
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon itunes">
-                        itunes
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon shazam">
-                        shazam
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon deezer">
-                        deezer
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon medium">
-                        medium
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon telegram">
-                        telegram
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon home_page">
-                        home_page
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon tidal">
-                        tidal
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon napster">
-                        napster
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="btn social-icon amazon_music">
-                        amazon_music
-                      </a>
-                    </li>
+                    <SocialList data={data}/>
                   </ul>
 
                   <div class="tooltip-wrapper">
