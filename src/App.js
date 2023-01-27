@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Navigation from "./components/navigation.component";
+import ArtistInfo from "./components/artist-info.component";
 
 const App = () => {
   const [artists, setArtists] = useState([]);
@@ -21,7 +22,7 @@ const App = () => {
   ) : (
     <>
       <Navigation artists={artists} setClickedArtist={setClickedArtist}/>
-      
+      <ArtistInfo filteredArtist={filteredArtist} />
     </>
   );
 };
