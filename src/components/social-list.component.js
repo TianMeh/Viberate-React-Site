@@ -7,8 +7,8 @@ const SocialList = ({ data }) => {
       {social_links.length !== 0 &&
         social_links.map((social) => {
           return (
-            <li>
-              <a href={`${social.link}`} class={`btn social-icon ${social.channel}`}>
+            <li key={social.channel}>
+              <a href={`${social.link}`} className={`btn social-icon ${social.channel}`}>
               {social.channel}
               </a>
             </li>

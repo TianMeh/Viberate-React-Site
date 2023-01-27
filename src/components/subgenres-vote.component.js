@@ -8,11 +8,11 @@ const SubgenresVote = ({ data }) => {
       {subgenres.length !== 0 &&
         subgenres.map((subgenre) => {
           return (
-            <div key={subgenre.name} class="row">
+            <div key={subgenre.name} className="row">
               <h5>{subgenre.name}</h5>
-              <div class="graph-line">
+              <div className="graph-line">
                 <span
-                  class="line"
+                  className="line"
                   style={{ width: `${subgenre.vote_percentage}%` }}
                 >
                   {subgenre.vote_percentage}%

@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import Logo from "../assets/logo-v.svg"
 
 const Navigation = ({ artists, setClickedArtist }) => {
   const umek = artists[0].artist_name;
@@ -22,19 +24,19 @@ const Navigation = ({ artists, setClickedArtist }) => {
       <header className="header">
         {/* <!-- page --> */}
         <div className="page">
-          <a href="#" className="logo">
-            <img src="./exercise-01_files/logo-v.svg" alt="Viberate" /> Viberate
+          <a className="logo">
+            <img src={Logo} alt="Viberate" /> Viberate
           </a>
 
           <nav className="navigation-primary">
             <ul className="menu-sys">
               <li>
-                <button style={{ color: "white" }} class="btn  search">
+                <button className="btn btn-menu search">
                   Search
                 </button>
               </li>
               <li>
-                <button className="btn more">More</button>
+                <button className="btn btn-menu more">More</button>
               </li>
             </ul>
             <ul className="menu">

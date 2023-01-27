@@ -6,7 +6,7 @@ const SubgenresNames = ({ data }) => {
     <>
       {subgenres.length !== 0 &&
         subgenres.map((subgenre) => {
-          return <span key={subgenre.name} class="btn btn-filter-tag">{subgenre.name}</span>;
+          return <span key={subgenre.name} className="btn btn-filter-tag">{subgenre.name}</span>;
         })}
     </>
   );
