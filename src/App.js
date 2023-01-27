@@ -1,35 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation.component";
 
-import Umek from "./routes/artists/umek.route";
-import ArianaGrande from "./routes/artists/ariana-grande.route";
-import BlackPink from "./routes/artists/blackpink.route";
-
 const App = () => {
-  const [artists, setArtists] = useState();
-  const [clickedArtist, setClickedArtist] = useState()
+  const [artists, setArtists] = useState([]);
+  const [clickedArtist, setClickedArtist] = useState("umek");
 
   useEffect(() => {
     fetch("https://run.mocky.io/v3/3cab6663-7cd8-4365-b8a6-4a1d89305f6a")
       .then((response) => response.json())
-      .then((result) => setArtists(result));
+      .then((result) => setArtists(result.all_artists));
   }, []);
 
-  return !artists ? (
+  const filteredArtist = artists.filter((artist, i) => {
+    return artist.artist_name.toLowerCase().includes(clickedArtist.toLowerCase())
+  })
+
+  return (artists.length === 0) ? (
     <h1>Loading...</h1>
   ) : (
-    <Routes>
-      <Route path="/" element={<Navigation artists={artists} setClickedArtist={setClickedArtist} />}>
-        <Route path="umek" element={<Umek />} />
-        <Route
-          path="ariana-grande"
-          element={<ArianaGrande artists={artists} />}
-        />
-        <Route path="blackpink" element={<BlackPink artists={artists} />} />
-      </Route>
-    </Routes>
+    <>
+      <Navigation artists={artists} setClickedArtist={setClickedArtist}/>
+      
+    </>
   );
 };
 

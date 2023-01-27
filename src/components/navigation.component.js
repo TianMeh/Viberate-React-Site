@@ -1,23 +1,21 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 
 const Navigation = ({ artists, setClickedArtist }) => {
-
-  const umek = artists.all_artists[0].artist_name
-  const arianaGrande = artists.all_artists[1].artist_name
-  const blackpink = artists.all_artists[2].artist_name
+  const umek = artists[0].artist_name;
+  const arianaGrande = artists[1].artist_name;
+  const blackpink = artists[2].artist_name;
 
   const setUmek = () => {
-    setClickedArtist(umek)
-  }
+    setClickedArtist(umek);
+  };
 
   const setAriana = () => {
-    setClickedArtist(arianaGrande)
-  }
+    setClickedArtist(arianaGrande);
+  };
 
   const setBlackpink = () => {
-    setClickedArtist(blackpink)
-  }
+    setClickedArtist(blackpink);
+  };
 
   return (
     <>
@@ -41,9 +39,7 @@ const Navigation = ({ artists, setClickedArtist }) => {
             </ul>
             <ul className="menu">
               <li>
-                <a onClick={setUmek} >
-                  {umek}
-                </a>
+                <a onClick={setUmek}>{umek}</a>
               </li>
               <li>
                 <a onClick={setAriana}>{arianaGrande}</a>
@@ -57,7 +53,6 @@ const Navigation = ({ artists, setClickedArtist }) => {
         {/* <!-- /page --> */}
       </header>
       {/* <!-- /HEADER --> */}
-      <Outlet />
     </>
   );
 };
