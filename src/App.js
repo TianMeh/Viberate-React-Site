@@ -9,6 +9,7 @@ import BlackPink from "./routes/artists/blackpink.route";
 
 const App = () => {
   const [artists, setArtists] = useState();
+  const [clickedArtist, setClickedArtist] = useState()
 
   useEffect(() => {
     fetch("https://run.mocky.io/v3/3cab6663-7cd8-4365-b8a6-4a1d89305f6a")
@@ -20,7 +21,7 @@ const App = () => {
     <h1>Loading...</h1>
   ) : (
     <Routes>
-      <Route path="/" element={<Navigation artists={artists} />}>
+      <Route path="/" element={<Navigation artists={artists} setClickedArtist={setClickedArtist} />}>
         <Route path="umek" element={<Umek />} />
         <Route
           path="ariana-grande"

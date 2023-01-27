@@ -1,10 +1,23 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-const Navigation = ({ artists }) => {
+const Navigation = ({ artists, setClickedArtist }) => {
+
   const umek = artists.all_artists[0].artist_name
   const arianaGrande = artists.all_artists[1].artist_name
   const blackpink = artists.all_artists[2].artist_name
+
+  const setUmek = () => {
+    setClickedArtist(umek)
+  }
+
+  const setAriana = () => {
+    setClickedArtist(arianaGrande)
+  }
+
+  const setBlackpink = () => {
+    setClickedArtist(blackpink)
+  }
 
   return (
     <>
@@ -28,15 +41,15 @@ const Navigation = ({ artists }) => {
             </ul>
             <ul className="menu">
               <li>
-                <Link to="/">
+                <a onClick={setUmek} >
                   {umek}
-                </Link>
+                </a>
               </li>
               <li>
-                <a href="">{arianaGrande}</a>
+                <a onClick={setAriana}>{arianaGrande}</a>
               </li>
               <li>
-                <a href="">{blackpink}</a>
+                <a onClick={setBlackpink}>{blackpink}</a>
               </li>
             </ul>
           </nav>
