@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import Navigation from "./components/navigation.component";
-import ArtistData from "./components/artist-data.component";
+import Navigation from "./containers/navigation.container";
+import ArtistData from "./containers/artist-data.container";
 
 const App = () => {
   const [artists, setArtists] = useState([]);
@@ -14,14 +14,16 @@ const App = () => {
   }, []);
 
   const filteredArtist = artists.filter((artist, i) => {
-    return artist.artist_name.toLowerCase().includes(clickedArtist.toLowerCase())
-  })
+    return artist.artist_name
+      .toLowerCase()
+      .includes(clickedArtist.toLowerCase());
+  });
 
-  return (artists.length === 0) ? (
+  return artists.length === 0 ? (
     <h1>Loading...</h1>
   ) : (
     <>
-      <Navigation artists={artists} setClickedArtist={setClickedArtist}/>
+      <Navigation artists={artists} setClickedArtist={setClickedArtist} />
       <ArtistData filteredArtist={filteredArtist} />
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import ArtistScreen from "./artist-screen.component";
+import ArtistScreen from "./artist-screen.container";
 
 const ArtistData = ({ filteredArtist }) => {
   const [artistData, setArtistData] = useState([]);
