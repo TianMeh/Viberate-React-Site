@@ -1,68 +1,117 @@
-import React, { useEffect } from "react";
+import React from "react";
+
+import { ResponsivePie } from "@nivo/pie";
 
 const PopularityChart = ({ data = {} }) => {
-  const {popularity} = data 
-  const newData = []
+  const { popularity } = data;
 
-  const setGraphData = () => {
-    popularity.map(item => {
-      newData.push({
-        id: item.city,
-        value: item.percentage,
-      })
-    })
-  }
-
-  useEffect(() => {
-    setGraphData()
-  }, [popularity])
-
-  console.log(newData)
-  
+  const newData = popularity.map((popular) => {
+    return {
+      id: popular.city,
+      value: popular.percentage,
+    };
+  });
 
   return (
-    <div className="stats-sheet">
+    <div style={{ height: 250 }} className="stats-sheet">
       <label>Most popular in</label>
-      <div className="row">
-        <h5>Ljubljana</h5>
-        <div className="graph-line">
-          <span className="line" style={{ width: "47%" }}>
-            47%
-          </span>
-        </div>
-      </div>
-      <div className="row">
-        <h5>Maribor</h5>
-        <div className="graph-line">
-          <span className="line" style={{ width: "23%" }}>
-            23%
-          </span>
-        </div>
-      </div>
-      <div className="row">
-        <h5>Celje</h5>
-        <div className="graph-line">
-          <span className="line" style={{ width: "15%" }}>
-            15%
-          </span>
-        </div>
-      </div>
-      <div className="row">
-        <h5>Postojna</h5>
-        <div className="graph-line">
-          <span className="line" style={{ width: "11%" }}>
-            11%
-          </span>
-        </div>
-      </div>
-      <div className="row">
-        <h5>Koper</h5>
-        <div className="graph-line">
-          <span className="line" style={{ width: "9%" }}>
-            9%
-          </span>
-        </div>
-      </div>
+      {newData && (
+        <ResponsivePie
+          data={newData}
+          margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+          innerRadius={0.5}
+          padAngle={0.7}
+          cornerRadius={3}
+          activeOuterRadiusOffset={8}
+          borderWidth={1}
+          borderColor={{
+            from: "color",
+            modifiers: [["darker", 0.2]],
+          }}
+          enableArcLinkLabels={false}
+          arcLabel={"id"}
+          isInteractive={false}
+          arcLinkLabelsSkipAngle={10}
+          arcLinkLabelsTextColor="#333333"
+          arcLinkLabelsThickness={2}
+          arcLinkLabelsColor={{ from: "color" }}
+          arcLabelsSkipAngle={10}
+          arcLabelsTextColor={{
+            from: "color",
+            modifiers: [["darker", 2]],
+          }}
+          defs={[
+            {
+              id: "dots",
+              type: "patternDots",
+              background: "inherit",
+              color: "rgba(255, 255, 255, 0.3)",
+              size: 4,
+              padding: 1,
+              stagger: true,
+            },
+            {
+              id: "lines",
+              type: "patternLines",
+              background: "inherit",
+              color: "rgba(255, 255, 255, 0.3)",
+              rotation: -45,
+              lineWidth: 6,
+              spacing: 10,
+            },
+          ]}
+          fill={[
+            {
+              match: {
+                id: "ruby",
+              },
+              id: "dots",
+            },
+            {
+              match: {
+                id: "c",
+              },
+              id: "dots",
+            },
+            {
+              match: {
+                id: "go",
+              },
+              id: "dots",
+            },
+            {
+              match: {
+                id: "python",
+              },
+              id: "dots",
+            },
+            {
+              match: {
+                id: "scala",
+              },
+              id: "lines",
+            },
+            {
+              match: {
+                id: "lisp",
+              },
+              id: "lines",
+            },
+            {
+              match: {
+                id: "elixir",
+              },
+              id: "lines",
+            },
+            {
+              match: {
+                id: "javascript",
+              },
+              id: "lines",
+            },
+          ]}
+        />
+      )}
     </div>
   );
 };
