@@ -1,4 +1,4 @@
-# 1. git clone "repo url"
+# 1. clone the repo
 
 # 2. yarn (if using yarn, else: npm i)
 
