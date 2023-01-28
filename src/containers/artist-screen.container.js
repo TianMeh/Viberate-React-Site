@@ -4,7 +4,7 @@ import React from "react";
 import SubgenresVote from "../components/subgenres-vote.component";
 import SubgenresNames from "../components/subgenres-names.component";
 import SocialList from "../components/social-list.component";
-import PopularityChart from "../components/popular-chart.component";
+import PopularityChart from "../components/popularity-chart.component";
 
 const ArtistScreen = ({ artistData }) => {
   const { data } = artistData;
