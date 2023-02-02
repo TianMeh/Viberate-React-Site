@@ -7,18 +7,6 @@ const Navigation = ({ artists, setClickedArtist }) => {
   const arianaGrande = artists[1].artist_name;
   const blackpink = artists[2].artist_name;
 
-  const setUmek = () => {
-    setClickedArtist(umek);
-  };
-
-  const setAriana = () => {
-    setClickedArtist(arianaGrande);
-  };
-
-  const setBlackpink = () => {
-    setClickedArtist(blackpink);
-  };
-
   return (
     <>
       <header className="header">
@@ -41,13 +29,13 @@ const Navigation = ({ artists, setClickedArtist }) => {
             </ul>
             <ul className="menu">
               <li>
-                <a onClick={setUmek}>{umek}</a>
+                <a onClick={() => setClickedArtist(umek)}>{umek}</a>
               </li>
               <li>
-                <a onClick={setAriana}>{arianaGrande}</a>
+                <a onClick={() => setClickedArtist(arianaGrande)}>{arianaGrande}</a>
               </li>
               <li>
-                <a onClick={setBlackpink}>{blackpink}</a>
+                <a onClick={() => setClickedArtist(blackpink)}>{blackpink}</a>
               </li>
             </ul>
           </nav>

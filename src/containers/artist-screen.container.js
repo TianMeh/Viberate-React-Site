@@ -7,9 +7,10 @@ import SocialList from "../components/social-list.component";
 import PopularityChart from "../components/popularity-chart.component";
 
 const ArtistScreen = ({ artistData }) => {
-  const { data } = artistData;
+  
 
   return (
+    
     // <!-- MAIN -->
     <main className="main">
       {/* <!-- section-artist-detail --> */}
@@ -20,7 +21,7 @@ const ArtistScreen = ({ artistData }) => {
           <div className="col visual">
             <figure
               style={{
-                backgroundImage: `url(${data.image})`,
+                backgroundImage: `url(${artistData.data.image})`,
               }}
             >
               <figcaption>
@@ -40,7 +41,7 @@ const ArtistScreen = ({ artistData }) => {
                       Booking Request
                     </button>
                     <h1 className="title">
-                      {data.name}
+                      {artistData.data.name}
                       <div className="tooltip-wrapper">
                         <span className="profile-claimed">Profile claimed</span>
                         <div className="tooltip">
@@ -51,7 +52,7 @@ const ArtistScreen = ({ artistData }) => {
                             on top!
                           </p>
                           <div className="stats-sheet">
-                            <SubgenresVote data={data} />
+                            <SubgenresVote data={artistData.data} />
                           </div>
                           <p>
                             <button className="btn btn-shadow">Vote now</button>
@@ -72,17 +73,17 @@ const ArtistScreen = ({ artistData }) => {
 
                   <div className="row">
                     <label>Origin</label>
-                    <a className="btn btn-filter-tag">{data.country.name}</a>
+                    <a className="btn btn-filter-tag">{artistData.data.country.name}</a>
                   </div>
 
                   <div className="row">
                     <label>Genre</label>
-                    <span className="btn btn-filter-tag">{data.genre.name}</span>
+                    <span className="btn btn-filter-tag">{artistData.data.genre.name}</span>
                   </div>
 
                   <div className="row">
                     <label>Subgenres</label>
-                    <SubgenresNames data={data}/>
+                    <SubgenresNames data={artistData.data}/>
                     <div className="tooltip-wrapper">
                       <button className="btn btn-add">Add subgenre</button>
                       <div className="tooltip">
@@ -92,7 +93,7 @@ const ArtistScreen = ({ artistData }) => {
                           are missing or vote for existing to get yours on top!
                         </p>
                         <div className="stats-sheet">
-                        <SubgenresVote data={data} />
+                        <SubgenresVote data={artistData.data} />
                         </div>
                         <p>
                           <button className="btn btn-shadow">Vote now</button>
@@ -104,7 +105,7 @@ const ArtistScreen = ({ artistData }) => {
 
                 <div className="footer-detail">
                   <ul className="social-list">
-                    <SocialList data={data}/>
+                    <SocialList data={artistData.data}/>
                   </ul>
 
                   <div className="tooltip-wrapper">
@@ -128,7 +129,7 @@ const ArtistScreen = ({ artistData }) => {
             {/* <!-- stats --> */}
             <div className="col stats">
               <div className="col-content">
-                <PopularityChart data={data} />
+                <PopularityChart data={artistData.data} />
               </div>
             </div>
             {/* <!-- /stats --> */}
